@@ -1,0 +1,30 @@
+package epam.training.homework.task7;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Solution_7{
+
+    // Чтение введенного с клавиатуры числа и парсинг его в Integer
+    protected static int readInt(String comment) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println(comment);
+        String inputVal = reader.readLine();
+        return Integer.parseInt(inputVal);
+    }
+    /* Подсчет расстояния от точки начала координат до указанной точки, сравнение
+    полученных результатов
+     */
+    protected static void findInterval(double x1, double y1, double x2, double y2){
+        double interval1 = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
+        double interval2 = Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2));
+        if (interval1 < interval2){
+            System.out.println("Первая точка расположена ближе к началу координат.");
+        } else if (interval2 < interval1){
+            System.out.println("Вторая точка расположена ближе к началу координат.");
+        } else {
+            System.out.println("Первая и вторая точка равноудалены от начала координат.");
+        }
+    }
+
+}
