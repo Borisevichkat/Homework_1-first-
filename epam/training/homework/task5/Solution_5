@@ -1,0 +1,30 @@
+package epam.training.homework.task5;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Solution_5 {
+
+    //Чтение введенного с клавиатуры числа, парсинг его в Integer
+    protected static int readInt(String comment) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println(comment);
+        String inputInt = reader.readLine();
+        return Integer.parseInt(inputInt);
+    }
+    // Проверяем, является ли число совершенным ( сумма делителей = числу)
+    protected static Boolean isPerfectNum(int number) throws IOException {
+        int sum = 0;
+        for(int i = 1; i < number; i++){
+            if(number%i == 0){
+                sum += i;
+            }
+        }
+        if(number == sum){
+            return true;
+        }
+        return false;
+    }
+
+}
