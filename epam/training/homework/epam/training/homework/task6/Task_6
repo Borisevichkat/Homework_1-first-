@@ -1,0 +1,11 @@
+package epam.training.homework.task6;
+import java.io.IOException;
+
+public class Task_6 {
+
+    public static void main(String[] args) throws IOException {
+        int inputSec = Solution_6.readValue("Введите количество секунд, прошедших с начала суток: ");
+        Solution_6.calculate(inputSec);
+    }
+
+}
